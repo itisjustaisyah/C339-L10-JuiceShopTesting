@@ -9,7 +9,7 @@ from selenium.webdriver.common.alert import Alert
 from time import *
 
 driver = webdriver.Firefox()
-wait = WebDriverWait(driver, 10)
+wait = WebDriverWait(driver, 3)
 
 
 def getSite(url):
@@ -178,6 +178,8 @@ def test_Basket_MinusButton_Happy(setup_getSite):
     driver.find_element(By.CSS_SELECTOR,
                         "button.ng-star-inserted:nth-child(1)").click()
     sleep(3)
+
+    print(getTotalPrice())
 
     assert getAJQuantity() == 1
     assert getAPQuantity() == 2
