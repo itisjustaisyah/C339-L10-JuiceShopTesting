@@ -52,6 +52,10 @@ def setup_getSite():
     print("teardown")
 
 
+def teardown_module(module):
+        driver.quit()
+
+
 def goToBasket():
     driver.find_element(By.XPATH,
                         "/html/body/app-root/div/mat-sidenav-container/mat-sidenav-content/app-navbar/mat-toolbar/mat-toolbar-row/button[4]").click()
